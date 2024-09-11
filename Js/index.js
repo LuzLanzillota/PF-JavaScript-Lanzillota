@@ -108,31 +108,4 @@ if (indextitulo) {
     nuevoH2.innerHTML = "Lo mejor de lo mejor";
     indextitulo.appendChild(nuevoH2);
 }
-if (imgSlider) {
-    const imagen = document.createElement('img');
-    imagen.src = "./recursos/Tini_MusicCollection_1440x540.jpg";
-    imgSlider.appendChild(imagen);
-    imagen.className = "imagenSlider1";
-}
-const swiper = new Swiper('.swiper', {
-    // Optional parameters
-    direction: 'vertical',
-    loop: true,
-
-    // If we need pagination
-    pagination: {
-        el: '.swiper-pagination',
-    },
-
-    // Navigation arrows
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-
-    // And if we need scrollbar
-    scrollbar: {
-        el: '.swiper-scrollbar',
-    },
-});
 

@@ -75,22 +75,9 @@ nav ul li a:hover {
     text-decoration: 2px solid underline white;
 
 }
-
-#imgSlider {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-
-}
-
-#imgSlider img {
-    object-fit: contain;
-    width: 100%;
-}
-
 h2#indextitulo {
     text-align: center;
-    margin: 3rem 0;
+    margin: 1rem 0;
 }
 
 /* Carrito de compras */
@@ -188,15 +175,6 @@ h2#indextitulo {
     background-color: white;
     border: 1px solid #000000;
 }
-
-#imagenSlider1 {
-    width: 100%;
-}
-
-#imagenSlider1 img {
-    width: 100%;
-}
-
 /* Estilo para los inputs */
 input[type="text"],
 input[type="password"] {
@@ -283,4 +261,12 @@ button[type="submit"]:hover {
 .swiper {
     width: auto;
     height: 550px;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    color: black;
+}
+.swiper-pagination-bullet {
+    background-color: black;
 }
