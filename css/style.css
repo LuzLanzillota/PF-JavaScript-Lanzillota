@@ -75,10 +75,61 @@ nav ul li a:hover {
     text-decoration: 2px solid underline white;
 
 }
+
 h2#indextitulo {
     text-align: center;
     margin: 1rem 0;
 }
+
+/* imagenes-index */
+.imagenes {
+    display: flex;
+    justify-content: space-between;
+    /* Alinea los artículos a lo largo del contenedor */
+    align-items: center;
+    flex-wrap: nowrap;
+    /* Evita que los artículos se envuelvan en la siguiente línea */
+    margin-top: 30px;
+    margin-bottom: 10px;
+    overflow-x: auto;
+    /* Permite el desplazamiento horizontal si es necesario */
+}
+
+.imagenes article {
+    margin: 0 10px;
+    width: 100%;
+    height: 472px;
+    background-size: cover;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.imagenes article h3 {
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+}
+
+.sombras {
+    background-image: url("../recursos/index/Vibrate-Shade-Card.jpg");
+}
+
+.falsies {
+    background-image: url("../recursos/index/shot_05_falsies_surreal_006_focus1.webp");
+}
+
+.age {
+    background-image: url("../recursos/index/mny20_about-us_eraser-concealer_315x473_r1-vb.webp");
+}
+
+.labiales {
+    background-image: url("../recursos/index/shot9_music_collection_ssmi_na_630x946.webp");
+}
+
 
 /* Carrito de compras */
 
@@ -175,6 +226,7 @@ h2#indextitulo {
     background-color: white;
     border: 1px solid #000000;
 }
+
 /* Estilo para los inputs */
 input[type="text"],
 input[type="password"] {
@@ -267,6 +319,7 @@ button[type="submit"]:hover {
 .swiper-button-prev {
     color: black;
 }
+
 .swiper-pagination-bullet {
     background-color: black;
 }
