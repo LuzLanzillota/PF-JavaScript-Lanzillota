@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Helvetica Neue LT Std, system-ui, sans-serif;
+    overflow-x: hidden;
+
+}
+
+h1 {
+    font-family: Helvetica Neue LT Std, system-ui, sans-serif;
+    text-align: center;
+    text-decoration: underline;
+    margin: 2rem 0;
+}
+
+h3,
+h4 {
+    font-family: Helvetica Neue LT Std, system-ui, sans-serif;
+    text-align: center;
+}
+
+div a img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+
+/* Navegador */
+
+#header {
+    background-color: black;
+    height: 120px;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav ul li {
+    font-family: Cabin, Arial, Helvetica, sans-serif;
+    list-style: none;
+    padding: 10px;
+    margin: 0 10px 0 0;
+    align-items: center;
+
+
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: large;
+
+}
+
+nav ul li a:hover {
+    text-decoration: 2px solid underline white;
+
+}
+
+#imgSlider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+#imgSlider img {
+    object-fit: contain;
+    width: 100%;
+}
+
+h2#indextitulo {
+    text-align: center;
+    margin: 3rem 0;
+}
+
+/* Carrito de compras */
+
+#carritoDeCompras {
+    position: absolute;
+    right: 40px;
+    z-index: 1000;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+
+#carritoDeCompras img {
+    width: 40px;
+    height: auto;
+    cursor: pointer;
+}
+
+/* Imagen del login */
+.login {
+    position: absolute;
+    top: 0;
+    right: 40px;
+    z-index: 1000;
+    background-color: #000000;
+    padding: 10px;
+}
+
+.login img {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+}
+
+#card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+    margin-bottom: 6rem;
+    padding: 0 2rem;
+    gap: 2rem;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    padding: 16px;
+    max-width: 400px;
+    min-width: 350px;
+    /* Añade un ancho mínimo */
+    min-height: 550px;
+    /* Añade una altura mínima */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    /* margin: 16px; */
+}
+
+.card img {
+    height: 250px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.card h3 {
+    font-size: 1.5em;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.card p {
+    margin: 5px 0;
+    font-size: 1em;
+}
+
+.botonCard {
+    color: white;
+    background-color: black;
+    padding: 10px;
+    margin: 0 auto;
+    border: 1px solid #ffffff;
+    border-radius: 5px;
+    display: block;
+    align-items: center;
+}
+
+.botonCard:hover {
+    color: black;
+    background-color: white;
+    border: 1px solid #000000;
+}
+
+#imagenSlider1 {
+    width: 100%;
+}
+
+#imagenSlider1 img {
+    width: 100%;
+}
+
+/* Estilo para los inputs */
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #000000;
+    border-radius: 4px;
+    background-color: #ffffff;
+    font-size: 16px;
+    transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Estilo para el focus */
+input[type="text"]:focus,
+input[type="password"]:focus {
+    border-color: #000000;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.25);
+    outline: none;
+}
+
+/* Estilo para el botón */
+button[type="submit"] {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+/* Hover para el botón */
+button[type="submit"]:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border: 2px solid black;
+}
+
+/* Estilo general del formulario */
+.formularioIndex {
+    max-width: 400px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 50px;
+    background-color: #ffffff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.botonVolver {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* footer */
+#footer {
+    background-color: black;
+    height: 50px;
+    justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#footer p {
+    text-align: center;
+    color: white;
+}
