@@ -17,10 +17,12 @@ h1 {
     margin: 2rem 0;
 }
 
+h2,
 h3,
 h4 {
     font-family: Helvetica Neue LT Std, system-ui, sans-serif;
     text-align: center;
+    margin: 1rem 0;
 }
 
 div a img {
@@ -322,4 +324,24 @@ button[type="submit"]:hover {
 
 .swiper-pagination-bullet {
     background-color: black;
+}
+
+/* Contacto */
+.mapa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.lugares {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.lugares img {
+    width: 200px;
+    margin: 10px;
 }
