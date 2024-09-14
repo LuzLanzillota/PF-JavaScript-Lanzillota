@@ -17,10 +17,6 @@ const enlaces = [
         nombre: "Productos"
     },
     {
-        link: "trend",
-        nombre: "Tendencias"
-    },
-    {
         link: "us",
         nombre: "Nosotros"
     },
