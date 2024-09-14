@@ -3,14 +3,14 @@ const cardContainer = document.getElementById('card-container');
 const productopeticion = async () => {
     const resultado = await fetch("https://api.mercadolibre.com/sites/MLA/search?q=Maybelline");
     const datos = await resultado.json();
-    const data = datos.results; // Accede a los productos correctamente
+    const data = datos.results;
 
-    for (let item of data) { // Se declara "let" para la variable "item"
+    for (let item of data) {
         const card = document.createElement('div');
         card.className = 'card';
 
         const productoImagen = document.createElement('img');
-        productoImagen.src = item.thumbnail; // Asegúrate de usar "thumbnail" que es parte de la API
+        productoImagen.src = item.thumbnail;
         productoImagen.alt = "Imagen de productos";
 
         const productoNombre = document.createElement('h3');
@@ -29,7 +29,7 @@ const productopeticion = async () => {
         button.innerHTML = "Comprar ahora";
         button.className = "botonCard";
         button.addEventListener('click', function () {
-            agregarAlCarrito(item); // Usar "item" que es el producto actual
+            agregarAlCarrito(item);
         });
 
         card.appendChild(productoNombre);
@@ -44,6 +44,60 @@ const productopeticion = async () => {
 
 productopeticion();
 
+function mostrarCarrito() {
+    const carrito = JSON.parse(localStorage.getItem('carrito')) || {};
+    const carritoContainer = document.getElementById('productosCarrito');
+    const noproducto = document.getElementById('noproducto');
+
+    carritoContainer.innerHTML = '';
+
+    if (Object.keys(carrito).length === 0) {
+        noproducto.style.display = 'block';
+    } else {
+        noproducto.style.display = 'none';
+    }
+
+    for (let id in carrito) {
+        const producto = carrito[id];
+
+        const productoDiv = document.createElement('div');
+        productoDiv.className = 'producto-carrito';
+
+        const productoImagen = document.createElement('img');
+        productoImagen.src = producto.thumbnail;
+        productoImagen.alt = producto.title;
+
+        const productoNombre = document.createElement('h3');
+        productoNombre.textContent = producto.title;
+
+        const productoCantidad = document.createElement('p');
+        productoCantidad.textContent = `Cantidad: ${producto.cantidad}`;
+
+        const productoPrecio = document.createElement('p');
+        productoPrecio.textContent = `Precio: $${producto.price}`;
+
+        const eliminarButton = document.createElement('button');
+        eliminarButton.textContent = 'Eliminar';
+        eliminarButton.addEventListener('click', function () {
+            eliminarProductoDelCarrito(id);
+        });
+
+        const productoDetalles = document.createElement('div');
+        productoDetalles.className = 'producto-detalles';
+        productoDetalles.appendChild(productoNombre);
+        productoDetalles.appendChild(productoCantidad);
+        productoDetalles.appendChild(productoPrecio);
+        productoDetalles.appendChild(eliminarButton);
+
+        productoDiv.appendChild(productoImagen);
+        productoDiv.appendChild(productoDetalles);
+
+        carritoContainer.appendChild(productoDiv);
+    }
+
+    actualizarCarritoIcono();
+}
+
 function actualizarCarritoIcono() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || {};
     const carritoDeCompras = document.querySelector('#carritoDeCompras img');
@@ -54,8 +108,6 @@ function actualizarCarritoIcono() {
         carritoDeCompras.src = './recursos/carrito-de-compras.png';
     }
 }
-document.addEventListener('DOMContentLoaded', mostrarCarrito);
-
 function agregarAlCarrito(item) {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || {};
     if (carrito[item.id]) {
@@ -63,17 +115,23 @@ function agregarAlCarrito(item) {
     } else {
         carrito[item.id] = { ...item, cantidad: 1 };
     }
-
+    const tituloMenosLetras = item.title.length > 20 ? item.title.slice(0, 20) + '...' : item.title;
     localStorage.setItem('carrito', JSON.stringify(carrito));
     Toastify({
-        text: `${item.title} se añadió al carrito`,
+        
+        text: `${tituloMenosLetras} se añadió al carrito`,
         duration: 3000,
         style: {
-            background: "black", 
-            color: "white", 
+            background: "black",
+            color: "white",
         }
     }).showToast();
 
-    actualizarCarritoIcono(); 
+    actualizarCarritoIcono();
 }
+
+document.addEventListener('DOMContentLoaded', function () {
+    mostrarCarrito();
+    actualizarCarritoIcono();
+});
 

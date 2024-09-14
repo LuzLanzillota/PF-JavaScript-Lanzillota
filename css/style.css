@@ -185,8 +185,7 @@ h2#indextitulo {
     border: 1px solid #000000;
     border-radius: 8px;
     padding: 16px;
-    max-width: 400px;
-    min-width: 350px;
+    width: 400px;
     /* Añade un ancho mínimo */
     min-height: 550px;
     /* Añade una altura mínima */
@@ -344,4 +343,91 @@ button[type="submit"]:hover {
 .lugares img {
     width: 200px;
     margin: 10px;
+}
+
+#productosCarrito {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Contenedor de cada producto */
+.producto-carrito {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+    background-color: #ffffff;
+    width: 100%;
+    max-width: calc(100% - 3rem);
+    
+}
+
+/* Estilo para la imagen */
+.producto-carrito img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-right: 20px;
+    
+}
+
+/* Contenedor del contenido del producto */
+.producto-detalles {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    height: 150px; 
+    align-items: center;
+}
+
+/* Estilos para el nombre del producto */
+.producto-detalles h3 {
+    margin-bottom: 16px;
+    text-align: center; 
+}
+
+/* Estilos para el nombre, precio y cantidad */
+.producto-detalles p {
+    margin: 8px 0; 
+    text-align: center; 
+}
+
+/* Botón de eliminar estilo */
+.producto-carrito button {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.producto-carrito button:hover {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid black;
+}
+
+#noproducto {
+    background-color: #000000;
+    color: #ffffff;
+    border: 1px solid #000000;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#noproducto p {
+    margin: 0;
+    font-size: 16px;
 }

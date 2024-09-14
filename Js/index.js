@@ -107,5 +107,6 @@ if (indextitulo) {
     const nuevoH2 = document.createElement("h2");
     nuevoH2.innerHTML = "Nuevos ingresos";
     indextitulo.appendChild(nuevoH2);
+    
 }
 
