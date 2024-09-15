@@ -591,6 +591,33 @@ button[type="submit"]:hover {
     }
 }
 
+@media (max-width:465px) {
+    .producto-carrito {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: calc(100% - 1rem);
+    }
+
+    .producto-carrito img {
+        width: 100px;
+        /* Ajusta el tamaño de la imagen */
+        margin-bottom: 10px;
+        /* Espacio entre la imagen y el título */
+    }
+
+    .producto-detalles {
+        text-align: center;
+        /* Centra el texto en el contenedor de detalles */
+    }
+
+    .producto-detalles h3,
+    .producto-detalles p {
+        margin: 4px 0;
+        font-size: 0.8em;
+        /* Ajusta el tamaño del texto si es necesario */
+    }
+}
 
 @media (max-width:400px) {
     #header {
@@ -679,24 +706,29 @@ button[type="submit"]:hover {
 
     .producto-carrito {
         display: flex;
-        flex-direction: column; /* Cambia a columna para apilar imagen y contenido */
-        align-items: center;
+        justify-content: center;
+        align-content: space-around;
+        flex-wrap: wrap;
+        flex-direction: column;
         width: calc(100% - 1rem);
-        padding: 10px; /* Añade un poco de padding para separar el contenido */
     }
 
     .producto-carrito img {
-        width: 100px; /* Ajusta el tamaño de la imagen */
-        margin-bottom: 10px; /* Espacio entre la imagen y el título */
+        width: 100px;
+        /* Ajusta el tamaño de la imagen */
+        margin-bottom: 10px;
+        /* Espacio entre la imagen y el título */
     }
 
     .producto-detalles {
-        text-align: center; /* Centra el texto en el contenedor de detalles */
+        text-align: center;
+        /* Centra el texto en el contenedor de detalles */
     }
 
     .producto-detalles h3,
     .producto-detalles p {
         margin: 4px 0;
-        font-size: 0.8em; /* Ajusta el tamaño del texto si es necesario */
+        font-size: 0.8em;
+        /* Ajusta el tamaño del texto si es necesario */
     }
 }
