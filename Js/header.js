@@ -17,24 +17,10 @@ const enlaces = [
         nombre: "Productos"
     },
     {
-        link: "us",
-        nombre: "Nosotros"
-    },
-    {
         link: "contact",
         nombre: "Contacto"
     }
 ];
-const loginDiv = document.createElement('div');
-loginDiv.classList.add('login');
-const loginLink = document.createElement('a');
-loginLink.href = 'login.html';
-const loginImg = document.createElement('img');
-loginImg.src = './recursos/usuario.png';
-loginImg.alt = 'Imagen de login';
-loginLink.appendChild(loginImg);
-loginDiv.appendChild(loginLink);
-
 
 header.appendChild(div);
 div.appendChild(a);
