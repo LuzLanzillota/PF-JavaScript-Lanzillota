@@ -643,4 +643,38 @@ button[type="submit"]:hover {
         max-width: 400px;
     }
 
+    #card-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        object-fit: cover;
+    }
+
+    .card h3 {
+        font-size: 1em;
+        margin: 0;
+        text-align: center;
+    }
+
+    .card p {
+        margin: 0;
+        font-size: 0.8em;
+        text-align: center;
+    }
+
 }
