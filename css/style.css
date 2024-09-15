@@ -575,15 +575,22 @@ button[type="submit"]:hover {
         width: 10px;
         height: 10px;
     }
-    
+
+}
+@media(max-width:729px){
+    #header .login img {
+        width: 45px;
+        margin-top: -20px;
+    }
 }
 
 @media (max-width:400px) {
     #header {
-        height: 80px;
+        height: calc(100%-3rem);
     }
-    #header .login img{
-        width: 25px;
+
+    #header .login img {
+        width: 30px;
     }
 
     nav ul li a {
