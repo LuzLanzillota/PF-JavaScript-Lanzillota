@@ -577,12 +577,20 @@ button[type="submit"]:hover {
     }
 
 }
-@media(max-width:729px){
+
+@media(max-width:729px) {
     #header .login img {
         width: 45px;
         margin-top: -20px;
     }
+
+    .lugares {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 }
+
 
 @media (max-width:400px) {
     #header {
