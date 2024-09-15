@@ -678,6 +678,25 @@ button[type="submit"]:hover {
     }
 
     .producto-carrito {
-        width: calc(100%-1rem);
+        display: flex;
+        flex-direction: column; /* Cambia a columna para apilar imagen y contenido */
+        align-items: center;
+        width: calc(100% - 1rem);
+        padding: 10px; /* Añade un poco de padding para separar el contenido */
+    }
+
+    .producto-carrito img {
+        width: 100px; /* Ajusta el tamaño de la imagen */
+        margin-bottom: 10px; /* Espacio entre la imagen y el título */
+    }
+
+    .producto-detalles {
+        text-align: center; /* Centra el texto en el contenedor de detalles */
+    }
+
+    .producto-detalles h3,
+    .producto-detalles p {
+        margin: 4px 0;
+        font-size: 0.8em; /* Ajusta el tamaño del texto si es necesario */
     }
 }
