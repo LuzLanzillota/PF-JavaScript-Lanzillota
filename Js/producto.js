@@ -42,6 +42,7 @@ const productopeticion = async () => {
     }
 };
 
+
 productopeticion();
 
 function mostrarCarrito() {
