@@ -29,6 +29,7 @@ div a img {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    height: 100%;
     padding-top: 20px;
 }
 
@@ -36,7 +37,7 @@ div a img {
 
 #header {
     background-color: black;
-    height: 120px;
+    height: 130px;
     position: relative;
 }
 

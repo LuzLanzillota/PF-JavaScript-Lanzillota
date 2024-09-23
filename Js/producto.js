@@ -149,8 +149,69 @@ function agregarAlCarrito(item) {
 }
 
 
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
+    const cardContainer = document.getElementById('card-container');
+    const buscadorInput = document.getElementById('buscador-input');
+
+    // Función para renderizar productos
+    function renderizarProductos(productos) {
+        cardContainer.innerHTML = '';
+        productos.forEach(producto => {
+            const card = document.createElement('div');
+            card.className = 'card';
+
+            const productoImagen = document.createElement('img');
+            productoImagen.src = producto.thumbnail;
+            productoImagen.alt = "Imagen de productos";
+
+            const productoNombre = document.createElement('h3');
+            productoNombre.innerHTML = producto.title;
+
+            const productoPrecio = document.createElement('p');
+            productoPrecio.innerHTML = `Precio: $${producto.price}`;
+
+            const productoTone = document.createElement('p');
+            productoTone.innerHTML = `Proveedor: ${producto.official_store_name}`;
+
+            const productoStock = document.createElement('p');
+            productoStock.innerHTML = `Stock disponible: ${producto.available_quantity}`;
+
+            const button = document.createElement('button');
+            button.innerHTML = "Comprar ahora";
+            button.className = "botonCard";
+            button.addEventListener('click', function () {
+                agregarAlCarrito(producto);
+            });
+
+            card.appendChild(productoNombre);
+            card.appendChild(productoImagen);
+            card.appendChild(productoPrecio);
+            card.appendChild(productoTone);
+            card.appendChild(productoStock);
+            card.appendChild(button);
+            cardContainer.appendChild(card);
+        });
+    }
+
+    const productopeticion = async () => {
+        const resultado = await fetch("https://api.mercadolibre.com/sites/MLA/search?q=Maybelline");
+        const datos = await resultado.json();
+        const data = datos.results;
+        renderizarProductos(data);  
+        buscadorInput.addEventListener('input', function () {
+            const textoBusqueda = buscadorInput.value.toLowerCase();
+            const productosFiltrados = data.filter(producto =>
+                producto.title.toLowerCase().includes(textoBusqueda)
+            );
+            renderizarProductos(productosFiltrados); 
+        });
+    };
+
+    productopeticion();
     mostrarCarrito();
     actualizarCarritoIcono();
 });
+
+
+
 
