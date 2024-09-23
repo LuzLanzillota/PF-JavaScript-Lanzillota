@@ -11,11 +11,24 @@ const Usuarios = [
     new Usuario('Sol', '5678', 'compra'),
 ];
 
+// Verificar el estado de la sesión al cargar la página
+window.onload = function () {
+    const storedUser = localStorage.getItem('nombre');
+    if (storedUser) {
+        mostrarBotonesSesion(storedUser);
+    }
+};
+
 document.getElementById('formulario').addEventListener('submit', function (e) {
     e.preventDefault();
 
     const nombre = document.getElementById('nombre').value;
     const password = document.getElementById('password').value;
+
+    // Limpiar el formulario
+    document.getElementById('nombre').value = '';
+    document.getElementById('password').value = '';
+
     localStorage.setItem('nombre', nombre);
     localStorage.setItem('password', password);
     login();
@@ -32,12 +45,20 @@ function login() {
     if (user) {
         mensajeDiv.textContent = `Bienvenida, ${user.nombre}`;
         mensajeDiv.style.color = 'green';
-        crearBotonVolver(volver);
+        mostrarBotonesSesion(user.nombre);
     } else {
         mensajeDiv.textContent = "Nombre de usuario o contraseña incorrectos";
         mensajeDiv.style.color = 'red';
-        volver.innerHTML = ""; // Asegúrate de limpiar el botón si el login falla
+        volver.innerHTML = ""; // Limpia el botón si el login falla
     }
+}
+
+function mostrarBotonesSesion(nombreUsuario) {
+    const volver = document.getElementById('volverHome');
+    volver.innerHTML = ""; // Limpia el contenedor de botones antes de agregar nuevos
+
+    crearBotonVolver(volver);
+    crearBotonLogout(volver);
 }
 
 function crearBotonVolver(volver) {
@@ -50,5 +71,22 @@ function crearBotonVolver(volver) {
             window.location.href = "./index.html";
         });
         volver.appendChild(buttonHome);
+    }
+}
+
+function crearBotonLogout(volver) {
+    // Comprueba si el botón ya existe para evitar duplicados
+    if (!document.querySelector('.botonLogout')) {
+        const buttonLogout = document.createElement('button');
+        buttonLogout.textContent = "Cerrar sesión";
+        buttonLogout.classList.add('botonLogout');
+        buttonLogout.addEventListener('click', function () {
+            localStorage.removeItem('nombre');
+            localStorage.removeItem('password');
+            document.getElementById('mensaje').textContent = "Has cerrado sesión.";
+            document.getElementById('mensaje').style.color = 'red';
+            volver.innerHTML = ""; // Limpia los botones al cerrar sesión
+        });
+        volver.appendChild(buttonLogout);
     }
 }
