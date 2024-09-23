@@ -109,16 +109,34 @@ function actualizarCarritoIcono() {
     }
 }
 function agregarAlCarrito(item) {
+    const nombreUsuario = localStorage.getItem('nombre');
+    const passwordUsuario = localStorage.getItem('password');
+
+    // Verificar si el usuario ha iniciado sesión
+    if (!nombreUsuario || !passwordUsuario) {
+        Toastify({
+            text: "Debes iniciar sesión antes de agregar productos al carrito.",
+            duration: 3000,
+            style: {
+                background: "red",
+                color: "white",
+            }
+        }).showToast();
+        return;  // Salir de la función si no ha iniciado sesión
+    }
+
+    // Si ha iniciado sesión, agregar producto al carrito
     const carrito = JSON.parse(localStorage.getItem('carrito')) || {};
     if (carrito[item.id]) {
         carrito[item.id].cantidad += 1;
     } else {
         carrito[item.id] = { ...item, cantidad: 1 };
     }
+
     const tituloMenosLetras = item.title.length > 20 ? item.title.slice(0, 20) + '...' : item.title;
     localStorage.setItem('carrito', JSON.stringify(carrito));
+
     Toastify({
-        
         text: `${tituloMenosLetras} se añadió al carrito`,
         duration: 3000,
         style: {
@@ -129,6 +147,7 @@ function agregarAlCarrito(item) {
 
     actualizarCarritoIcono();
 }
+
 
 document.addEventListener('DOMContentLoaded', function () {
     mostrarCarrito();

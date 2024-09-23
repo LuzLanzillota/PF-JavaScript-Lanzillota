@@ -21,7 +21,6 @@ const enlaces = [
         nombre: "Contacto"
     }
 ];
-
 header.appendChild(div);
 div.appendChild(a);
 a.appendChild(img);

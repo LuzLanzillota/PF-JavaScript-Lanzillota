@@ -48,10 +48,8 @@ function mostrarCarrito() {
 
             carritoContainer.appendChild(productoDiv);
         }
-
-        // Actualizar el total en la interfaz
         const { total, precioIva } = calcularTotalCarrito();
-        totalCarrito.textContent = `Total: $${total.toFixed(2)} (IVA incluido: $${precioIva.toFixed(2)})`; // Mostrar el total con IVA
+        totalCarrito.textContent = `Total: $${total.toFixed(2)} (IVA incluido: $${precioIva.toFixed(2)})`; 
         actualizarCarritoIcono();
     }
 }
@@ -83,17 +81,11 @@ function eliminarProductoDelCarrito(productoId) {
 function calcularTotalCarrito() {
     const carrito = JSON.parse(localStorage.getItem('carrito')) || {};
     let total = 0;
-
-    // Calcular el total
     for (let id in carrito) {
         const producto = carrito[id];
         total += producto.price * producto.cantidad;
     }
-
-    // Calcular el total con IVA (21%)
     const precioIva = total * 1.21;
-
-    // Retornar un objeto con ambos valores
     return {
         total,
         precioIva

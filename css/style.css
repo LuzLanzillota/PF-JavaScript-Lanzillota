@@ -62,8 +62,6 @@ nav ul li {
     padding: 10px;
     margin: 0 10px 0 0;
     align-items: center;
-
-
 }
 
 nav ul li a {
@@ -357,7 +355,8 @@ button[type="submit"]:hover {
 /* Contenedor de cada producto */
 .producto-carrito {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    align-content: space-around;
     justify-content: space-between;
     border: 1px solid #000000;
     border-radius: 8px;
@@ -373,8 +372,6 @@ button[type="submit"]:hover {
     width: 150px;
     height: 150px;
     object-fit: cover;
-    margin-right: 20px;
-
 }
 
 /* Contenedor del contenido del producto */
@@ -402,7 +399,6 @@ button[type="submit"]:hover {
     padding: 8px 16px;
     border-radius: 4px;
     cursor: pointer;
-    margin-left: 20px;
 }
 
 .producto-carrito button:hover {
@@ -460,8 +456,6 @@ button[type="submit"]:hover {
 }
 
 /* Responsive */
-
-/* Inicio */
 
 @media (max-width: 1200px) {
     #header {
@@ -617,6 +611,34 @@ button[type="submit"]:hover {
         font-size: 0.8em;
         /* Ajusta el tamaño del texto si es necesario */
     }
+
+    #noproducto {
+        width: 80%;
+        max-width: 400px;
+    }
+
+    .swiper {
+        height: 200px;
+        /* Ajusta la altura del carrusel para móviles */
+    }
+
+    .swiper-wrapper img {
+        height: 200px;
+        /* Ajusta la altura de las imágenes para móviles */
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        font-size: 0.8rem;
+        /* Ajusta el tamaño de los botones de navegación para móviles */
+    }
+
+    .swiper-pagination-bullet {
+        width: 6px;
+        /* Ajusta el tamaño de las balas de paginación para móviles */
+        height: 6px;
+    }
+
 }
 
 @media (max-width:400px) {
@@ -634,31 +656,27 @@ button[type="submit"]:hover {
     }
 
     .swiper {
-        width: 100%;
-
-        height: 300px;
-
+        height: 200px;
+        /* Ajusta la altura del carrusel para móviles */
     }
 
     .swiper-wrapper img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+        height: 200px;
+        /* Ajusta la altura de las imágenes para móviles */
     }
 
     .swiper-button-next,
     .swiper-button-prev {
-        color: black;
-        font-size: 1rem;
-
+        font-size: 0.8rem;
+        /* Ajusta el tamaño de los botones de navegación para móviles */
     }
 
     .swiper-pagination-bullet {
-        background-color: black;
-        width: 8px;
-
-        height: 8px;
+        width: 6px;
+        /* Ajusta el tamaño de las balas de paginación para móviles */
+        height: 6px;
     }
+
 
     .lugares {
         display: flex;
@@ -710,25 +728,22 @@ button[type="submit"]:hover {
         align-content: space-around;
         flex-wrap: wrap;
         flex-direction: column;
+        text-align: center;
         width: calc(100% - 1rem);
     }
 
     .producto-carrito img {
         width: 100px;
-        /* Ajusta el tamaño de la imagen */
         margin-bottom: 10px;
-        /* Espacio entre la imagen y el título */
     }
 
     .producto-detalles {
         text-align: center;
-        /* Centra el texto en el contenedor de detalles */
     }
 
     .producto-detalles h3,
     .producto-detalles p {
         margin: 4px 0;
         font-size: 0.8em;
-        /* Ajusta el tamaño del texto si es necesario */
     }
 }
