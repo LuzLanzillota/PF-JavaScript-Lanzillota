@@ -113,7 +113,6 @@ function agregarAlCarrito(item) {
     const nombreUsuario = localStorage.getItem('nombre');
     const passwordUsuario = localStorage.getItem('password');
 
-    // Verificar si el usuario ha iniciado sesión
     if (!nombreUsuario || !passwordUsuario) {
         Toastify({
             text: "Debes iniciar sesión antes de agregar productos al carrito.",
@@ -123,10 +122,9 @@ function agregarAlCarrito(item) {
                 color: "white",
             }
         }).showToast();
-        return;  // Salir de la función si no ha iniciado sesión
+        return;  
     }
 
-    // Si ha iniciado sesión, agregar producto al carrito
     const carrito = JSON.parse(localStorage.getItem('carrito')) || {};
     if (carrito[item.id]) {
         carrito[item.id].cantidad += 1;
@@ -154,7 +152,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const cardContainer = document.getElementById('card-container');
     const buscadorInput = document.getElementById('buscador-input');
 
-    // Función para renderizar productos
     function renderizarProductos(productos) {
         cardContainer.innerHTML = '';
         productos.forEach(producto => {

@@ -11,7 +11,6 @@ const Usuarios = [
     new Usuario('Sol', '5678', 'compra'),
 ];
 
-// Verificar el estado de la sesión al cargar la página
 window.onload = function () {
     const storedUser = localStorage.getItem('nombre');
     if (storedUser) {
@@ -25,7 +24,6 @@ document.getElementById('formulario').addEventListener('submit', function (e) {
     const nombre = document.getElementById('nombre').value;
     const password = document.getElementById('password').value;
 
-    // Limpiar el formulario
     document.getElementById('nombre').value = '';
     document.getElementById('password').value = '';
 
@@ -49,20 +47,19 @@ function login() {
     } else {
         mensajeDiv.textContent = "Nombre de usuario o contraseña incorrectos";
         mensajeDiv.style.color = 'red';
-        volver.innerHTML = ""; // Limpia el botón si el login falla
+        volver.innerHTML = ""; 
     }
 }
 
 function mostrarBotonesSesion(nombreUsuario) {
     const volver = document.getElementById('volverHome');
-    volver.innerHTML = ""; // Limpia el contenedor de botones antes de agregar nuevos
+    volver.innerHTML = ""; 
 
     crearBotonVolver(volver);
     crearBotonLogout(volver);
 }
 
 function crearBotonVolver(volver) {
-    // Comprueba si el botón ya existe para evitar duplicados
     if (!document.querySelector('.botonVolver')) {
         const buttonHome = document.createElement('button');
         buttonHome.textContent = "Volver al inicio";
@@ -75,7 +72,6 @@ function crearBotonVolver(volver) {
 }
 
 function crearBotonLogout(volver) {
-    // Comprueba si el botón ya existe para evitar duplicados
     if (!document.querySelector('.botonLogout')) {
         const buttonLogout = document.createElement('button');
         buttonLogout.textContent = "Cerrar sesión";
@@ -85,7 +81,7 @@ function crearBotonLogout(volver) {
             localStorage.removeItem('password');
             document.getElementById('mensaje').textContent = "Has cerrado sesión.";
             document.getElementById('mensaje').style.color = 'red';
-            volver.innerHTML = ""; // Limpia los botones al cerrar sesión
+            volver.innerHTML = "";
         });
         volver.appendChild(buttonLogout);
     }
